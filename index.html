@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Café Luna – Case Study | Rius Dev</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Café Luna Case Study | Rius Dev</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,14 +20,15 @@ font-family:'Poppins',sans-serif;
 body{
 background:#fafafa;
 color:#333;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* HERO */
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
 url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085");
 background-size:cover;
 background-position:center;
@@ -40,29 +41,31 @@ padding:20px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:52px;
 margin-bottom:20px;
 }
 
 .hero p{
-max-width:600px;
+max-width:650px;
 margin:auto;
 margin-bottom:30px;
+font-size:18px;
 }
 
 .btn{
 background:#ff8c00;
 color:white;
-padding:14px 28px;
+padding:14px 30px;
 border-radius:6px;
 text-decoration:none;
-margin:10px;
+margin:8px;
 display:inline-block;
 transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* CONTAINER */
@@ -70,31 +73,33 @@ transform:translateY(-3px);
 .container{
 max-width:1100px;
 margin:auto;
-padding:80px 20px;
+padding:90px 20px;
 }
-
-/* SECTION TITLE */
 
 .section-title{
-font-size:32px;
-margin-bottom:40px;
 text-align:center;
+font-size:34px;
+margin-bottom:50px;
 }
 
-/* PROJECT INFO */
+/* GRID */
 
-.project-info{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:30px;
-text-align:center;
 }
 
-.project-card{
+.card{
 background:white;
 padding:30px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
+border-radius:12px;
+box-shadow:0 15px 30px rgba(0,0,0,0.06);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
 }
 
 /* IMAGE */
@@ -105,7 +110,7 @@ border-radius:10px;
 margin-top:30px;
 }
 
-/* MENU GRID */
+/* MENU */
 
 .menu-grid{
 display:grid;
@@ -115,14 +120,15 @@ gap:30px;
 
 .menu-card{
 background:white;
-border-radius:10px;
+border-radius:12px;
 overflow:hidden;
 box-shadow:0 10px 20px rgba(0,0,0,0.05);
 transition:.3s;
 }
 
 .menu-card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 25px 40px rgba(0,0,0,0.15);
 }
 
 .menu-card img{
@@ -130,42 +136,61 @@ width:100%;
 }
 
 .menu-card h3{
-padding:15px;
+padding:18px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+background:#111;
+color:white;
+text-align:center;
+padding:90px 20px;
+}
+
+.experience p{
+max-width:700px;
+margin:auto;
 }
 
 /* TESTIMONIAL */
 
 .testimonial{
 background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
+padding:50px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.06);
 text-align:center;
-max-width:600px;
+max-width:650px;
 margin:auto;
 }
 
 /* CTA */
 
 .cta{
-background:#111;
+background:#000;
 color:white;
 text-align:center;
-padding:80px 20px;
+padding:100px 20px;
 }
 
 .cta h2{
+font-size:36px;
 margin-bottom:20px;
 }
 
 /* FOOTER */
 
 footer{
+background:#111;
+color:#bbb;
 text-align:center;
-padding:40px;
-background:#000;
-color:white;
+padding:50px 20px;
 font-size:14px;
+}
+
+footer strong{
+color:white;
 }
 
 </style>
@@ -179,46 +204,45 @@ font-size:14px;
 
 <div>
 
-<h1>Café Luna Website</h1>
+<h1>Café Luna Website Experience</h1>
 
 <p>
-A modern café website designed to create a warm
-and inviting digital experience that encourages
-customers to visit the café.
+Designing a website that captures the warm,
+cozy atmosphere of a café and emotionally
+connects visitors with the brand.
 </p>
 
 <a href="#overview" class="btn">View Case Study</a>
-
 <a href="../index.html" class="btn">Back to Portfolio</a>
 
 </div>
 
 </section>
 
-<!-- OVERVIEW -->
+<!-- PROJECT OVERVIEW -->
 
 <section class="container" id="overview">
 
 <h2 class="section-title">Project Overview</h2>
 
-<div class="project-info">
+<div class="grid">
 
-<div class="project-card">
+<div class="card">
 <h3>Client</h3>
 <p>Café Luna</p>
 </div>
 
-<div class="project-card">
+<div class="card">
 <h3>Industry</h3>
 <p>Coffee Shop</p>
 </div>
 
-<div class="project-card">
+<div class="card">
 <h3>Role</h3>
 <p>Frontend Developer</p>
 </div>
 
-<div class="project-card">
+<div class="card">
 <h3>Tools</h3>
 <p>HTML CSS JavaScript</p>
 </div>
@@ -227,19 +251,18 @@ customers to visit the café.
 
 </section>
 
-<!-- PROBLEM -->
+<!-- CHALLENGE -->
 
 <section class="container">
 
 <h2 class="section-title">The Challenge</h2>
 
 <p>
-Many small cafés rely only on social media and
-lack a dedicated website to showcase their
-menu, atmosphere, and brand story.
-This project aims to create a visually appealing
-website that helps Café Luna attract more
-customers and communicate its cozy experience.
+Many cafés rely only on Instagram to present their
+business. Without a website, customers cannot easily
+explore the menu, atmosphere, or story behind the café.
+The challenge was to design a website that communicates
+warmth, comfort, and personality.
 </p>
 
 <img class="image"
@@ -247,19 +270,25 @@ src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
 
 </section>
 
-<!-- SOLUTION -->
+<!-- PSYCHOLOGY SECTION -->
 
-<section class="container">
+<section class="experience">
 
-<h2 class="section-title">The Solution</h2>
+<h2>Designing with Human Emotion</h2>
+
+<br>
 
 <p>
-The website focuses on creating an emotional
-connection with visitors by highlighting the
-atmosphere of the café, beautiful coffee
-presentation, and inviting visual storytelling.
-The design emphasizes simplicity, warm colors,
-and smooth user experience.
+
+The goal of this project was not only to display
+information, but to create a digital experience
+that feels warm and inviting.
+
+Through warm colors, spacious layouts,
+and visual storytelling, the website encourages
+visitors to imagine themselves enjoying coffee
+inside the café.
+
 </p>
 
 </section>
@@ -298,10 +327,9 @@ and smooth user experience.
 <h2 class="section-title">Expected Results</h2>
 
 <p>
-The new website helps the café present its brand
-in a more professional way, improve online
-presence, and attract new visitors who are
-searching for aesthetic coffee spots.
+The redesigned website provides a more professional
+digital presence for the café and helps attract new
+customers searching for aesthetic coffee spots online.
 </p>
 
 </section>
@@ -313,9 +341,11 @@ searching for aesthetic coffee spots.
 <div class="testimonial">
 
 <p>
-"Working with Rius Dev helped our café present
-its identity online beautifully. The website
-captures the cozy vibe of our café perfectly."
+
+"The website beautifully represents the cozy
+atmosphere of our café. Customers often explore
+our menu online before visiting."
+
 </p>
 
 <br>
@@ -330,16 +360,17 @@ captures the cozy vibe of our café perfectly."
 
 <section class="cta">
 
-<h2>Need a Website for Your Business?</h2>
+<h2>Let's Build Something Meaningful</h2>
 
 <p>
-I design modern and engaging websites
-that help businesses connect with their customers.
+I create modern websites designed to connect
+with users emotionally and help businesses
+present their brand beautifully online.
 </p>
 
 <br>
 
-<a href="https://wa.me/6281234567890" class="btn">
+<a href="https://wa.me/6281338693093" class="btn">
 Start a Project
 </a>
 
@@ -350,7 +381,15 @@ Start a Project
 <footer>
 
 <p>
-© 2026 Rius Dev — Frontend Developer
+Website designed & developed by
+<strong>Rius Dev</strong>
+</p>
+
+<br>
+
+<p>
+Frontend Developer focused on creating
+engaging digital experiences.
 </p>
 
 </footer>
