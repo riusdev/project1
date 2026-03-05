@@ -1,206 +1,359 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Café Luna - Premium Coffee Experience</title>
+<title>Café Luna – Case Study | Rius Dev</title>
 
-<!-- Swiper.js CSS for carousel & slider -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== Reset & Base ===== */
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
-body { line-height:1.6; color:#333; scroll-behavior: smooth; }
-h1,h2,h3,h4 { margin-bottom:0.5em; font-weight:600; }
 
-/* ===== Hero ===== */
-.hero {
-  height:100vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?coffee,cafe') center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:white;
-  position:relative;
-  overflow:hidden;
-}
-.hero h1 { font-size:3.5em; animation: fadeInUp 1s ease-out; }
-.hero p { font-size:1.2em; margin-top:10px; animation: fadeInUp 1.3s ease-out; }
-.button {
-  background-color:#f7a600;
-  color:white;
-  padding:16px 32px;
-  border-radius:12px;
-  display:inline-block;
-  margin-top:20px;
-  text-decoration:none;
-  transition: transform 0.3s, box-shadow 0.3s;
-  animation: fadeInUp 1.6s ease-out;
-}
-.button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-/* ===== Keyframes ===== */
-@keyframes fadeInUp {
-  0% { opacity:0; transform: translateY(20px);}
-  100% { opacity:1; transform: translateY(0);}
+body{
+background:#fafafa;
+color:#333;
+line-height:1.6;
 }
 
-/* ===== Menu ===== */
-.menu { padding:80px 20px; background:#f9f9f9; text-align:center; }
-.menu-grid { display:flex; justify-content:center; flex-wrap:wrap; gap:30px; }
-.menu-item { background:white; padding:25px; border-radius:15px; width:220px; box-shadow:0 8px 20px rgba(0,0,0,0.05); transition: transform 0.4s, box-shadow 0.4s; cursor:pointer; }
-.menu-item:hover { transform: translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
-.menu-item img { width:100%; border-radius:15px; margin-bottom:15px; }
+/* HERO */
 
-/* ===== Before → After Interactive Slider ===== */
-.before-after { padding:80px 20px; text-align:center; background:#fff; }
-.before-after h2 { margin-bottom:50px; }
-.twentytwenty-container { position: relative; max-width: 800px; margin: auto; }
-.twentytwenty-container img { width:100%; display:block; border-radius:15px; }
-
-/* ===== Testimoni Carousel ===== */
-.testimoni { padding:80px 20px; background:#f2f2f2; text-align:center; }
-.testimonial-grid { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-.testimonial-item { background:white; padding:25px; border-radius:15px; width:280px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
-
-/* ===== Fade-in animation ===== */
-.fade-in { opacity:0; transform:translateY(20px); transition: all 0.8s ease-out; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
-
-/* ===== Floating WhatsApp ===== */
-.whatsapp-float {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:70px;
-  height:70px;
-  z-index:1000;
-  animation: bounce 2s infinite;
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
 }
-.whatsapp-float img { width:100%; height:100%; border-radius:50%; }
 
-/* ===== Bounce Animation ===== */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
 }
+
+.hero p{
+max-width:600px;
+margin:auto;
+margin-bottom:30px;
+}
+
+.btn{
+background:#ff8c00;
+color:white;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+margin:10px;
+display:inline-block;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+font-size:32px;
+margin-bottom:40px;
+text-align:center;
+}
+
+/* PROJECT INFO */
+
+.project-info{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.project-card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* IMAGE */
+
+.image{
+width:100%;
+border-radius:10px;
+margin-top:30px;
+}
+
+/* MENU GRID */
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.menu-card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+transition:.3s;
+}
+
+.menu-card:hover{
+transform:translateY(-6px);
+}
+
+.menu-card img{
+width:100%;
+}
+
+.menu-card h3{
+padding:15px;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+text-align:center;
+max-width:600px;
+margin:auto;
+}
+
+/* CTA */
+
+.cta{
+background:#111;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.cta h2{
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+background:#000;
+color:white;
+font-size:14px;
+}
+
 </style>
 </head>
 
 <body>
-<!-- Hero Section -->
-<header class="hero fade-in">
-  <div class="hero-content">
-    <h1>Premium Coffee Experience</h1>
-    <p>Crafting a Cozy Coffee Experience
 
-Website ini dirancang untuk membantu Café Luna
-menarik lebih banyak pengunjung dengan
-desain visual yang hangat dan modern.
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>Café Luna Website</h1>
+
+<p>
+A modern café website designed to create a warm
+and inviting digital experience that encourages
+customers to visit the café.
 </p>
-    <a href="#menu" class="button">Lihat Menu</a>
-  </div>
-</header>
 
-<!-- Menu Section -->
-<section id="menu" class="menu fade-in">
-  <h2>Menu & Paket Spesial</h2>
-  <div class="menu-grid">
-    <div class="menu-item">
-      <img src="assets/coffe-latte1.jpg" alt="Coffee Latte">
-      <h3>Coffee Latte</h3>
-      <p>Rp 30.000</p>
-    </div>
-    <div class="menu-item">
-      <img src="assets/croissant1.jpeg" alt="Croissant">
-      <h3>Croissant</h3>
-      <p>Rp 25.000</p>
-    </div>
-    <div class="menu-item">
-      <img src="assets/dessert2.jpeg" alt="Dessert">
-      <h3>Dessert Spesial</h3>
-      <p>Rp 40.000</p>
-    </div>
-  </div>
+<a href="#overview" class="btn">View Case Study</a>
+
+<a href="../index.html" class="btn">Back to Portfolio</a>
+
+</div>
+
 </section>
 
-<!-- Before → After Slider (Interactive) -->
-<section id="before-after" class="before-after fade-in">
-  <h2>Transformasi Interior Café</h2>
-  <div class="twentytwenty-container">
-    <img src="assets/before1.jpg" alt="Before">
-    <img src="assets/after1.jpg" alt="After">
-  </div>
+<!-- OVERVIEW -->
+
+<section class="container" id="overview">
+
+<h2 class="section-title">Project Overview</h2>
+
+<div class="project-info">
+
+<div class="project-card">
+<h3>Client</h3>
+<p>Café Luna</p>
+</div>
+
+<div class="project-card">
+<h3>Industry</h3>
+<p>Coffee Shop</p>
+</div>
+
+<div class="project-card">
+<h3>Role</h3>
+<p>Frontend Developer</p>
+</div>
+
+<div class="project-card">
+<h3>Tools</h3>
+<p>HTML CSS JavaScript</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- Testimoni Carousel -->
-<section id="testimoni" class="testimoni fade-in">
-  <h2>Testimoni</h2>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide testimonial-item">
-        <p>“Tempatnya cozy banget, coffee-nya enak, dan staff ramah!”</p>
-        <h4>- Anna, Jakarta</h4>
-      </div>
-      <div class="swiper-slide testimonial-item">
-        <p>“Sangat recommended untuk kerja sambil ngopi santai.”</p>
-        <h4>- Budi, Bandung</h4>
-      </div>
-      <div class="swiper-slide testimonial-item">
-        <p>“Desain interiornya aesthetic banget, bikin betah!”</p>
-        <h4>- Clara, Surabaya</h4>
-      </div>
-    </div>
-    <!-- Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+<!-- PROBLEM -->
+
+<section class="container">
+
+<h2 class="section-title">The Challenge</h2>
+
+<p>
+Many small cafés rely only on social media and
+lack a dedicated website to showcase their
+menu, atmosphere, and brand story.
+This project aims to create a visually appealing
+website that helps Café Luna attract more
+customers and communicate its cozy experience.
+</p>
+
+<img class="image"
+src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+
 </section>
 
-<!-- Floating WhatsApp CTA -->
-<a href="https://wa.me/6281338693093" class="whatsapp-float" target="_blank">
-  <img src="assets/icon-whatshap.jpg" alt="WhatsApp">
+<!-- SOLUTION -->
+
+<section class="container">
+
+<h2 class="section-title">The Solution</h2>
+
+<p>
+The website focuses on creating an emotional
+connection with visitors by highlighting the
+atmosphere of the café, beautiful coffee
+presentation, and inviting visual storytelling.
+The design emphasizes simplicity, warm colors,
+and smooth user experience.
+</p>
+
+</section>
+
+<!-- MENU -->
+
+<section class="container">
+
+<h2 class="section-title">Featured Menu</h2>
+
+<div class="menu-grid">
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<h3>Coffee Latte</h3>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
+<h3>Fresh Croissant</h3>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+<h3>Dessert Selection</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- RESULT -->
+
+<section class="container">
+
+<h2 class="section-title">Expected Results</h2>
+
+<p>
+The new website helps the café present its brand
+in a more professional way, improve online
+presence, and attract new visitors who are
+searching for aesthetic coffee spots.
+</p>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section class="container">
+
+<div class="testimonial">
+
+<p>
+"Working with Rius Dev helped our café present
+its identity online beautifully. The website
+captures the cozy vibe of our café perfectly."
+</p>
+
+<br>
+
+<strong>— Café Luna Owner</strong>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Need a Website for Your Business?</h2>
+
+<p>
+I design modern and engaging websites
+that help businesses connect with their customers.
+</p>
+
+<br>
+
+<a href="https://wa.me/6281234567890" class="btn">
+Start a Project
 </a>
 
-<!-- JS Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/twentytwenty-js@1.0.0/jquery.twentytwenty.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</section>
 
-<script>
-// Fade-in on scroll
-const fadeItems = document.querySelectorAll('.fade-in');
-window.addEventListener('scroll', () => {
-  fadeItems.forEach(item => {
-    const top = item.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      item.classList.add('visible');
-    }
-  });
-});
+<!-- FOOTER -->
 
-// Swiper Carousel for Testimoni
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  autoplay: { delay: 3000 },
-  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-  breakpoints: { 768: { slidesPerView:2 }, 1024: { slidesPerView:3 } }
-});
+<footer>
 
-// Before-After Slider Init
-$(document).ready(function(){
-  $(".twentytwenty-container").twentytwenty({default_offset_pct:0.5});
-});
-</script>
+<p>
+© 2026 Rius Dev — Frontend Developer
+</p>
 
-<!-- TwentyTwenty CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twentytwenty-js@1.0.0/twentytwenty.css"/>
+</footer>
+
 </body>
 </html>
