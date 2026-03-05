@@ -1,73 +1,201 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1 - Rius Alupan Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-    body { background:#f9f9f9; color:#111; line-height:1.6; }
-    a { text-decoration:none; color:#0077cc; }
-    img { max-width:100%; display:block; border-radius:10px; }
-    section { padding:60px 20px; }
-    h1,h2,h3 { margin-bottom:20px; color:#111; }
-    h1 { font-size:2.5rem; }
-    h2 { font-size:2rem; }
-    h3 { font-size:1.5rem; }
-    p { margin-bottom:15px; }
-    .container { max-width:1000px; margin:0 auto; }
-    .project-header { text-align:center; margin-bottom:50px; }
-    .project-header p { font-size:1.1rem; color:#555; }
-    .project-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-bottom:50px; }
-    @media(max-width:768px){ .project-grid { grid-template-columns:1fr; gap:30px; } }
-    .project-meta { background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-    .project-meta h3 { margin-bottom:10px; }
-    .project-meta ul { list-style:none; }
-    .project-meta li { margin-bottom:8px; }
-    .cta-btn { display:inline-block; padding:12px 25px; background:#0077cc; color:#fff; font-weight:600; border-radius:8px; transition:0.3s; }
-    .cta-btn:hover { background:#005fa3; }
-    .outcome { background:#e8f1ff; padding:20px; border-radius:10px; margin-top:30px; }
-    .project-visuals img { border-radius:10px; margin-bottom:20px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Luna - Premium Coffee Experience</title>
+
+<!-- Swiper.js CSS for carousel & slider -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<style>
+/* ===== Reset & Base ===== */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
+body { line-height:1.6; color:#333; scroll-behavior: smooth; }
+h1,h2,h3,h4 { margin-bottom:0.5em; font-weight:600; }
+
+/* ===== Hero ===== */
+.hero {
+  height:100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?coffee,cafe') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+.hero h1 { font-size:3.5em; animation: fadeInUp 1s ease-out; }
+.hero p { font-size:1.2em; margin-top:10px; animation: fadeInUp 1.3s ease-out; }
+.button {
+  background-color:#f7a600;
+  color:white;
+  padding:16px 32px;
+  border-radius:12px;
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 1.6s ease-out;
+}
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeInUp {
+  0% { opacity:0; transform: translateY(20px);}
+  100% { opacity:1; transform: translateY(0);}
+}
+
+/* ===== Menu ===== */
+.menu { padding:80px 20px; background:#f9f9f9; text-align:center; }
+.menu-grid { display:flex; justify-content:center; flex-wrap:wrap; gap:30px; }
+.menu-item { background:white; padding:25px; border-radius:15px; width:220px; box-shadow:0 8px 20px rgba(0,0,0,0.05); transition: transform 0.4s, box-shadow 0.4s; cursor:pointer; }
+.menu-item:hover { transform: translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
+.menu-item img { width:100%; border-radius:15px; margin-bottom:15px; }
+
+/* ===== Before → After Interactive Slider ===== */
+.before-after { padding:80px 20px; text-align:center; background:#fff; }
+.before-after h2 { margin-bottom:50px; }
+.twentytwenty-container { position: relative; max-width: 800px; margin: auto; }
+.twentytwenty-container img { width:100%; display:block; border-radius:15px; }
+
+/* ===== Testimoni Carousel ===== */
+.testimoni { padding:80px 20px; background:#f2f2f2; text-align:center; }
+.testimonial-grid { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+.testimonial-item { background:white; padding:25px; border-radius:15px; width:280px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+
+/* ===== Fade-in animation ===== */
+.fade-in { opacity:0; transform:translateY(20px); transition: all 0.8s ease-out; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* ===== Floating WhatsApp ===== */
+.whatsapp-float {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:70px;
+  height:70px;
+  z-index:1000;
+  animation: bounce 2s infinite;
+}
+.whatsapp-float img { width:100%; height:100%; border-radius:50%; }
+
+/* ===== Bounce Animation ===== */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+</style>
 </head>
+
 <body>
+<!-- Hero Section -->
+<header class="hero fade-in">
+  <div class="hero-content">
+    <h1>Premium Coffee Experience</h1>
+    <p>Café Luna – Tempat ngopi nyaman, aesthetic, dan memorable</p>
+    <a href="#menu" class="button">Lihat Menu</a>
+  </div>
+</header>
 
-  <!-- Project 1 Section -->
-  <section id="project1">
-    <div class="container">
-      <div class="project-header">
-        <h1>Project 1: Perception Architecture Web</h1>
-        <p>Frontend project yang menyentuh psikologi pengunjung, memudahkan interaksi, dan meningkatkan engagement klien melalui desain berbasis persepsi.</p>
+<!-- Menu Section -->
+<section id="menu" class="menu fade-in">
+  <h2>Menu & Paket Spesial</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="assets/coffe-latte1.jpg" alt="Coffee Latte">
+      <h3>Coffee Latte</h3>
+      <p>Rp 30.000</p>
+    </div>
+    <div class="menu-item">
+      <img src="assets/croissant.jpeg" alt="Croissant">
+      <h3>Croissant</h3>
+      <p>Rp 25.000</p>
+    </div>
+    <div class="menu-item">
+      <img src="assets/dessert2.jpeg" alt="Dessert">
+      <h3>Dessert Spesial</h3>
+      <p>Rp 40.000</p>
+    </div>
+  </div>
+</section>
+
+<!-- Before → After Slider (Interactive) -->
+<section id="before-after" class="before-after fade-in">
+  <h2>Transformasi Interior Café</h2>
+  <div class="twentytwenty-container">
+    <img src="assets/before1.jpg" alt="Before">
+    <img src="assets/after1.jpg" alt="After">
+  </div>
+</section>
+
+<!-- Testimoni Carousel -->
+<section id="testimoni" class="testimoni fade-in">
+  <h2>Testimoni</h2>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide testimonial-item">
+        <p>“Tempatnya cozy banget, coffee-nya enak, dan staff ramah!”</p>
+        <h4>- Anna, Jakarta</h4>
       </div>
-
-      <div class="project-grid">
-        <!-- Visuals -->
-        <div class="project-visuals">
-          <img src="https://riusdev.github.io/assets/desktop-screenshot.png" alt="Project 1 Desktop View">
-          <img src="https://riusdev.github.io/assets/mobile-screenshot.png" alt="Project 1 Mobile View">
-        </div>
-
-        <!-- Role & Tech -->
-        <div class="project-meta">
-          <h3>Role & Teknologi</h3>
-          <ul>
-            <li>Peran: Frontend Developer & UX Designer</li>
-            <li>Teknologi: HTML, CSS, JavaScript, GitHub Pages</li>
-            <li>Integrasi CTA interaktif (WhatsApp & kontak)</li>
-          </ul>
-          <a href="https://riusdev.github.io/" target="_blank" class="cta-btn">Lihat Live Project</a>
-          <a href="https://github.com/riusdev/rius-portofolio" target="_blank" class="cta-btn" style="margin-left:10px;">Lihat GitHub</a>
-        </div>
+      <div class="swiper-slide testimonial-item">
+        <p>“Sangat recommended untuk kerja sambil ngopi santai.”</p>
+        <h4>- Budi, Bandung</h4>
       </div>
-
-      <!-- Outcome -->
-      <div class="outcome">
-        <h3>Hasil / Outcome</h3>
-        <p>Project ini meningkatkan engagement pengunjung hingga 35%, mempermudah interaksi, dan memperkuat persepsi brand klien sesuai filosofi "frontend yang menyentuh psikologi pengguna".</p>
+      <div class="swiper-slide testimonial-item">
+        <p>“Desain interiornya aesthetic banget, bikin betah!”</p>
+        <h4>- Clara, Surabaya</h4>
       </div>
     </div>
-  </section>
+    <!-- Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
 
+<!-- Floating WhatsApp CTA -->
+<a href="https://wa.me/6281338693093" class="whatsapp-float" target="_blank">
+  <img src="assets/icon-whatshap.jpg" alt="WhatsApp">
+</a>
+
+<!-- JS Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/twentytwenty-js@1.0.0/jquery.twentytwenty.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+// Fade-in on scroll
+const fadeItems = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+  fadeItems.forEach(item => {
+    const top = item.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      item.classList.add('visible');
+    }
+  });
+});
+
+// Swiper Carousel for Testimoni
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: { delay: 3000 },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  breakpoints: { 768: { slidesPerView:2 }, 1024: { slidesPerView:3 } }
+});
+
+// Before-After Slider Init
+$(document).ready(function(){
+  $(".twentytwenty-container").twentytwenty({default_offset_pct:0.5});
+});
+</script>
+
+<!-- TwentyTwenty CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twentytwenty-js@1.0.0/twentytwenty.css"/>
 </body>
 </html>
