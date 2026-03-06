@@ -3,153 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rius Alupan — Portfolio Cinematic</title>
+<title>Project 1 — Café Luna</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* RESET & BASE */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0a0a0a;color:#fff;overflow-x:hidden;scroll-behavior:smooth;}
+body{background:#fafafa;color:#333;line-height:1.7;}
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;border-radius:10px;}
 
-/* CUSTOM CURSOR */
-.cursor{position:fixed;top:0;left:0;width:20px;height:20px;background:#fff;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition: transform 0.1s ease-out, background 0.2s, scale 0.2s;z-index:9999;}
-
-/* SECTIONS */
-section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;opacity:0;transform:translateY(50px);transition: all 1s cubic-bezier(0.77,0,0.175,1);position:relative;overflow:hidden;padding:60px 20px;}
-
 /* HERO */
-.hero{position:relative;overflow:hidden;}
-.hero img{width:150px;border-radius:50%;margin-bottom:20px;}
-.hero h1{font-size:3rem;margin-bottom:1rem;}
-.hero p{font-size:1.2rem;margin-bottom:2rem;}
-.hero .btn{padding:0.8rem 2rem;border:2px solid #fff;border-radius:30px;cursor:pointer;transition:all 0.3s ease;}
-.hero .btn:hover{background:#fff;color:#111;}
+.hero{
+height:100vh;
+background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("assets/cafe-interior.jpeg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+.hero h1{font-size:52px;margin-bottom:20px;}
+.hero p{max-width:650px;margin:auto;margin-bottom:30px;font-size:18px;}
+.btn{
+background:#ff8c00;
+color:white;
+padding:14px 30px;
+border-radius:6px;
+display:inline-block;
+margin:8px;
+transition:.3s;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
 
-/* PROJECTS */
-.projects h2{font-size:2.5rem;margin-bottom:3rem;}
-.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
-.project-card{background:#1a1a1a;border-radius:15px;overflow:hidden;cursor:pointer;position:relative;transition: transform 0.3s ease;}
-.project-card:hover{transform:translateY(-10px);}
-.project-card img{width:100%;transition: transform 0.3s ease;}
-.project-card:hover img{transform:scale(1.05);}
-.project-card .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);opacity:0;display:flex;justify-content:center;align-items:center;color:#fff;font-size:1.2rem;transition:opacity 0.3s ease;}
-.project-card:hover .overlay{opacity:1;}
+/* CONTAINER */
+.container{max-width:1100px;margin:auto;padding:90px 20px;}
+.section-title{text-align:center;font-size:34px;margin-bottom:50px;}
 
-/* ABOUT & CONTACT */
-.about, .contact{text-align:center;}
-.about img{width:150px;border-radius:50%;margin-bottom:20px;}
-.skills{display:flex;justify-content:center;flex-wrap:wrap;margin-top:20px;}
-.skill{background:#0077cc;color:#fff;padding:8px 15px;margin:5px;border-radius:8px;font-weight:600;}
-.contact a{display:inline-block;margin:0.5rem;padding:0.8rem 2rem;border:2px solid #fff;border-radius:30px;transition:all 0.3s ease;}
-.contact a:hover{background:#fff;color:#111;}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+.card{background:white;padding:30px;border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,0.06);transition:.3s;}
+.card:hover{transform:translateY(-6px);}
+.image{width:100%;border-radius:10px;margin-top:30px;}
+
+/* MENU */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.menu-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,0.05);transition:.3s;}
+.menu-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 25px 40px rgba(0,0,0,0.15);}
+.menu-card img{width:100%;}
+.menu-card h3{padding:18px;}
+
+/* EXPERIENCE */
+.experience{background:#111;color:white;text-align:center;padding:90px 20px;}
+.experience p{max-width:700px;margin:auto;}
+
+/* TESTIMONIAL */
+.testimonial{background:white;padding:50px;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.06);text-align:center;max-width:650px;margin:auto;}
+
+/* CTA */
+.cta{background:#000;color:white;text-align:center;padding:100px 20px;}
+.cta h2{font-size:36px;margin-bottom:20px;}
 
 /* FOOTER */
-.footer{padding:80px 20px;text-align:center;background:#1a1a1a;}
-.footer p{margin:auto;}
-
-/* PARALLAX */
-[data-parallax]{transform: translateY(0px);transition: transform 0.2s ease;}
-
-@media(max-width:768px){.hero h1{font-size:2.2rem;}.hero p{font-size:1rem;}}
+footer{background:#111;color:#bbb;text-align:center;padding:50px 20px;font-size:14px;}
+footer strong{color:white;}
 </style>
 </head>
 <body>
 
-<div class="cursor"></div>
-
 <!-- HERO -->
-<section class="hero" data-parallax>
-  <img src="https://riusdev.github.io/assets/rius-photo.jpg" alt="Foto Rius Alupan">
-  <h1>Frontend Developer & Digital Strategist</h1>
-  <p>Membuat project interaktif yang menyentuh psikologi klien</p>
-  <div class="btn" onclick="scrollToSection('.projects')">Lihat Portfolio</div>
+<section class="hero">
+  <div>
+    <h1>Café Luna Website Experience</h1>
+    <p>Designing a website that captures the warm, cozy atmosphere of a café and emotionally connects visitors with the brand.</p>
+    <a href="#overview" class="btn">View Case Study</a>
+    <a href="../index.html" class="btn">Back to Portfolio</a>
+  </div>
 </section>
 
-<!-- PROJECT SHOWCASE -->
-<section class="projects" data-parallax>
-  <h2>Project Showcase</h2>
-  <div class="project-grid">
-    <!-- Project 1 -->
-    <div class="project-card">
-      <img src="https://riusdev.github.io/project1/assets/cafe-interior.jpeg" alt="Project 1">
-      <div class="overlay">Lihat Project 1</div>
+<!-- PROJECT OVERVIEW -->
+<section class="container" id="overview">
+  <h2 class="section-title">Project Overview</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Client</h3>
+      <p>Café Luna</p>
     </div>
-    <!-- Project 2 -->
-    <div class="project-card">
-      <img src="https://riusdev.github.io/project2/assets/project2-desktop.jpeg" alt="Project 2">
-      <div class="overlay">Lihat Project 2</div>
+    <div class="card">
+      <h3>Industry</h3>
+      <p>Coffee Shop</p>
     </div>
-    <!-- Project 3 -->
-    <div class="project-card">
-      <img src="https://riusdev.github.io/project3/assets/project3-desktop.jpeg" alt="Project 3">
-      <div class="overlay">Lihat Project 3</div>
+    <div class="card">
+      <h3>Role</h3>
+      <p>Frontend Developer</p>
+    </div>
+    <div class="card">
+      <h3>Tools</h3>
+      <p>HTML, CSS, JavaScript</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" data-parallax>
-  <img src="https://riusdev.github.io/assets/rius-photo.jpg" alt="Foto Rius Alupan">
-  <h2>About Me</h2>
-  <p>Frontend Developer yang fokus menciptakan project menyentuh psikologi pengguna. Spesialisasi: HTML, CSS, JavaScript, UI/UX Design, interactive web experience.</p>
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">UI/UX Design</div>
-    <div class="skill">GitHub Pages</div>
+<!-- CHALLENGE -->
+<section class="container">
+  <h2 class="section-title">The Challenge</h2>
+  <p>Many cafés rely only on Instagram to present their business. Without a website, customers cannot easily explore the menu, atmosphere, or story behind the café. The challenge was to design a website that communicates warmth, comfort, and personality.</p>
+  <img class="image" src="assets/cafe-interior.jpeg" alt="Cafe Interior">
+</section>
+
+<!-- MENU -->
+<section class="container">
+  <h2 class="section-title">Featured Menu</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img src="assets/coffee-latte.jpeg" alt="Coffee Latte">
+      <h3>Coffee Latte</h3>
+    </div>
+    <div class="menu-card">
+      <img src="assets/croissant.jpeg" alt="Croissant">
+      <h3>Fresh Croissant</h3>
+    </div>
+    <div class="menu-card">
+      <img src="assets/dessert.jpeg" alt="Dessert Selection">
+      <h3>Dessert Selection</h3>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" data-parallax>
-  <h2>Contact Me</h2>
-  <a href="mailto:devrius0@gmail.com">Email</a>
-  <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a>
-  <a href="https://github.com/riusdev" target="_blank">GitHub</a>
+<!-- EXPERIENCE -->
+<section class="experience">
+  <h2>Designing with Human Emotion</h2>
+  <p>The goal of this project was not only to display information, but to create a digital experience that feels warm and inviting. Through warm colors, spacious layouts, and visual storytelling, the website encourages visitors to imagine themselves enjoying coffee inside the café.</p>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="container">
+  <div class="testimonial">
+    <p>"The website beautifully represents the cozy atmosphere of our café. Customers often explore our menu online before visiting."</p>
+    <br>
+    <strong>— Café Luna Owner</strong>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Let's Build Something Meaningful</h2>
+  <p>I create modern websites designed to connect with users emotionally and help businesses present their brand beautifully online.</p>
+  <br>
+  <a href="https://wa.me/6281338693093" class="btn">Start a Project</a>
 </section>
 
 <!-- FOOTER -->
-<section class="footer" data-parallax>
-  <h2>Let’s Build Something Meaningful</h2>
-  <p>If your brand needs clarity, structure, and controlled authority, we can start a deliberate conversation.</p>
-  <a href="mailto:devrius0@gmail.com" class="btn">Start Project</a>
-</section>
-
-<script>
-// CUSTOM CURSOR
-const cursor=document.querySelector('.cursor');
-window.addEventListener('mousemove', e=>{cursor.style.top=e.clientY+'px'; cursor.style.left=e.clientX+'px';});
-
-// SCROLL TO SECTION
-function scrollToSection(selector){document.querySelector(selector).scrollIntoView({behavior:'smooth'});}
-
-// CINEMATIC SECTIONS
-const sections=document.querySelectorAll('section');
-function revealSections(){
-  const triggerBottom=window.innerHeight/5*4;
-  sections.forEach(sec=>{
-    if(sec.getBoundingClientRect().top<triggerBottom){
-      sec.style.opacity=1;
-      sec.style.transform='translateY(0)';
-    }else{
-      sec.style.opacity=0;
-      sec.style.transform='translateY(50px)';
-    }
-  });
-}
-window.addEventListener('scroll', revealSections);
-window.addEventListener('load', revealSections);
-
-// PARALLAX
-window.addEventListener('scroll', ()=>{
-  const scrollY=window.scrollY;
-  document.querySelectorAll('[data-parallax]').forEach(el=>{
-    el.style.transform=`translateY(${scrollY*0.05}px)`;
-  });
-});
-</script>
+<footer>
+  <p>Website designed & developed by <strong>Rius Dev</strong></p>
+  <br>
+  <p>Frontend Developer focused on creating engaging digital experiences.</p>
+</footer>
 
 </body>
 </html>
