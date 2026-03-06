@@ -3,51 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project 1 — Café Luna</title>
+<title>Project 1 — Café Luna | Cinematic</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* GLOBAL RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#fafafa;color:#333;line-height:1.7;}
+body{background:#fafafa;color:#333;line-height:1.7;overflow-x:hidden;scroll-behavior:smooth;}
 a{text-decoration:none;color:inherit;}
-img{max-width:100%;display:block;border-radius:10px;}
+img{max-width:100%;display:block;border-radius:10px;transition:transform 0.3s ease;}
+img:hover{transform:scale(1.03);}
+
+/* CINEMATIC SECTIONS */
+section{min-height:80vh;padding:80px 20px;opacity:0;transform:translateY(50px);transition:all 1s cubic-bezier(0.77,0,0.175,1);position:relative;overflow:hidden;}
+.container{max-width:1100px;margin:auto;}
+h1,h2,h3{font-weight:500;color:#111;}
+h1{font-size:48px;margin-bottom:20px;}
+h2{font-size:36px;margin-bottom:30px;}
+h3{font-size:24px;margin-bottom:15px;}
+p{font-size:16px;color:#555;margin-bottom:15px;}
 
 /* HERO */
-.hero{
-height:100vh;
-background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("assets/cafe-interior.jpeg");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
-}
-.hero h1{font-size:52px;margin-bottom:20px;}
-.hero p{max-width:650px;margin:auto;margin-bottom:30px;font-size:18px;}
-.btn{
-background:#ff8c00;
-color:white;
-padding:14px 30px;
-border-radius:6px;
-display:inline-block;
-margin:8px;
-transition:.3s;
-}
-.btn:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+.hero{height:100vh;background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("assets/cafe-interior.jpeg"); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; text-align:center; color:white; padding:20px;}
+.hero h1{font-size:52px;}
+.hero p{margin-top:20px;font-size:20px;}
+.btn{display:inline-block;margin-top:30px;padding:14px 30px;border-radius:8px;background:#ff8c00;color:white;transition:0.3s;}
+.btn:hover{transform:scale(1.05);}
 
-/* CONTAINER */
-.container{max-width:1100px;margin:auto;padding:90px 20px;}
-.section-title{text-align:center;font-size:34px;margin-bottom:50px;}
-
-/* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
-.card{background:white;padding:30px;border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,0.06);transition:.3s;}
+/* GRID & CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-bottom:50px;}
+.card{background:white;padding:30px;border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,0.06);transition:0.3s;}
 .card:hover{transform:translateY(-6px);}
-.image{width:100%;border-radius:10px;margin-top:30px;}
-
-/* MENU */
 .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
 .menu-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,0.05);transition:.3s;}
 .menu-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 25px 40px rgba(0,0,0,0.15);}
@@ -56,7 +41,7 @@ transition:.3s;
 
 /* EXPERIENCE */
 .experience{background:#111;color:white;text-align:center;padding:90px 20px;}
-.experience p{max-width:700px;margin:auto;}
+.experience p{max-width:700px;margin:auto;font-size:18px;line-height:1.9;}
 
 /* TESTIMONIAL */
 .testimonial{background:white;padding:50px;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.06);text-align:center;max-width:650px;margin:auto;}
@@ -64,27 +49,23 @@ transition:.3s;
 /* CTA */
 .cta{background:#000;color:white;text-align:center;padding:100px 20px;}
 .cta h2{font-size:36px;margin-bottom:20px;}
-
-/* FOOTER */
-footer{background:#111;color:#bbb;text-align:center;padding:50px 20px;font-size:14px;}
-footer strong{color:white;}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" data-parallax>
   <div>
     <h1>Café Luna Website Experience</h1>
-    <p>Designing a website that captures the warm, cozy atmosphere of a café and emotionally connects visitors with the brand.</p>
+    <p>Designing a digital experience that feels warm, cozy, and emotionally engaging for visitors.</p>
     <a href="#overview" class="btn">View Case Study</a>
     <a href="../index.html" class="btn">Back to Portfolio</a>
   </div>
 </section>
 
 <!-- PROJECT OVERVIEW -->
-<section class="container" id="overview">
-  <h2 class="section-title">Project Overview</h2>
+<section class="container" id="overview" data-parallax>
+  <h2>Project Overview</h2>
   <div class="grid">
     <div class="card">
       <h3>Client</h3>
@@ -106,22 +87,22 @@ footer strong{color:white;}
 </section>
 
 <!-- CHALLENGE -->
-<section class="container">
-  <h2 class="section-title">The Challenge</h2>
-  <p>Many cafés rely only on Instagram to present their business. Without a website, customers cannot easily explore the menu, atmosphere, or story behind the café. The challenge was to design a website that communicates warmth, comfort, and personality.</p>
-  <img class="image" src="assets/cafe-interior.jpeg" alt="Cafe Interior">
+<section class="container" data-parallax>
+  <h2>The Challenge</h2>
+  <p>Many cafés rely only on Instagram. Without a website, visitors cannot explore the menu or ambiance. This project communicates warmth, comfort, and personality.</p>
+  <img src="assets/cafe-interior.jpeg" alt="Cafe Interior" class="image">
 </section>
 
 <!-- MENU -->
-<section class="container">
-  <h2 class="section-title">Featured Menu</h2>
+<section class="container" data-parallax>
+  <h2>Featured Menu</h2>
   <div class="menu-grid">
     <div class="menu-card">
       <img src="assets/coffee-latte.jpeg" alt="Coffee Latte">
       <h3>Coffee Latte</h3>
     </div>
     <div class="menu-card">
-      <img src="assets/croissant.jpeg" alt="Croissant">
+      <img src="assets/croissants.jpeg" alt="Croissant">
       <h3>Fresh Croissant</h3>
     </div>
     <div class="menu-card">
@@ -132,13 +113,13 @@ footer strong{color:white;}
 </section>
 
 <!-- EXPERIENCE -->
-<section class="experience">
+<section class="experience" data-parallax>
   <h2>Designing with Human Emotion</h2>
-  <p>The goal of this project was not only to display information, but to create a digital experience that feels warm and inviting. Through warm colors, spacious layouts, and visual storytelling, the website encourages visitors to imagine themselves enjoying coffee inside the café.</p>
+  <p>The goal was not just to display information, but to create a digital experience that feels warm and inviting. Warm colors, spacious layouts, and visual storytelling help visitors imagine enjoying coffee inside the café.</p>
 </section>
 
 <!-- TESTIMONIAL -->
-<section class="container">
+<section class="container" data-parallax>
   <div class="testimonial">
     <p>"The website beautifully represents the cozy atmosphere of our café. Customers often explore our menu online before visiting."</p>
     <br>
@@ -147,7 +128,7 @@ footer strong{color:white;}
 </section>
 
 <!-- CTA -->
-<section class="cta">
+<section class="cta" data-parallax>
   <h2>Let's Build Something Meaningful</h2>
   <p>I create modern websites designed to connect with users emotionally and help businesses present their brand beautifully online.</p>
   <br>
@@ -155,11 +136,32 @@ footer strong{color:white;}
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer data-parallax>
   <p>Website designed & developed by <strong>Rius Dev</strong></p>
   <br>
   <p>Frontend Developer focused on creating engaging digital experiences.</p>
 </footer>
+
+<script>
+// CINEMATIC FADE-IN ON SCROLL + PARALLAX
+const sections = document.querySelectorAll('section, footer');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.8){
+      sec.style.opacity = 1;
+      sec.style.transform = 'translateY(0)';
+    } else {
+      sec.style.opacity = 0;
+      sec.style.transform = 'translateY(50px)';
+    }
+    // simple parallax
+    sec.style.transform += ` translateY(${scrollY*0.03}px)`;
+  });
+});
+window.addEventListener('load', () => { window.dispatchEvent(new Event('scroll')); });
+</script>
 
 </body>
 </html>
