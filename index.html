@@ -17,48 +17,44 @@ color:#333;
 line-height:1.6;
 }
 
-/* TEXT SPACING IMPROVEMENT */
-
-h2{
-margin-bottom:20px;
-}
-
-p{
-max-width:700px;
-}
-
 /* HERO */
 
 .hero{
 background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb");
 
 background-size:cover;
 background-position:center;
 
 color:white;
-padding:150px 20px;
+padding:160px 20px;
 text-align:center;
 }
 
 .hero h1{
-font-size:46px;
+font-size:48px;
 margin-bottom:10px;
-animation:fadeUp 1s ease;
 }
 
 .hero h3{
 font-weight:normal;
 opacity:0.9;
-margin-bottom:20px;
-animation:fadeUp 1.3s ease;
 }
 
-.hero p{
-margin:auto;
-opacity:0.9;
-animation:fadeUp 1.6s ease;
+.hero-buttons{
+margin-top:30px;
+}
+
+.hero-buttons a{
+display:inline-block;
+margin:10px;
+padding:12px 26px;
+background:#ff6b35;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
 }
 
 /* CONTAINER */
@@ -67,6 +63,14 @@ animation:fadeUp 1.6s ease;
 max-width:1100px;
 margin:auto;
 padding:60px 20px;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+p{
+max-width:720px;
 }
 
 /* GRID */
@@ -78,22 +82,12 @@ gap:25px;
 margin-top:30px;
 }
 
-/* CARD */
-
 .card{
 background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 6px 18px rgba(0,0,0,0.06);
-transition:0.3s;
 }
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 28px rgba(0,0,0,0.1);
-}
-
-/* IMAGES */
 
 img{
 width:100%;
@@ -111,20 +105,6 @@ margin-top:30px;
 
 .section{
 margin-top:80px;
-}
-
-/* TESTIMONIAL */
-
-.testimonial{
-background:#fff;
-padding:30px;
-border-radius:10px;
-box-shadow:0 6px 18px rgba(0,0,0,0.06);
-margin-top:30px;
-}
-
-.testimonial p{
-font-style:italic;
 }
 
 /* CTA */
@@ -146,30 +126,7 @@ color:white;
 text-decoration:none;
 border-radius:6px;
 font-weight:bold;
-transition:0.3s;
 }
-
-.cta a:hover{
-opacity:0.85;
-}
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-/* MOBILE */
 
 @media(max-width:700px){
 
@@ -189,7 +146,6 @@ font-size:34px;
 
 <body>
 
-
 <!-- HERO -->
 
 <section class="hero">
@@ -199,14 +155,20 @@ font-size:34px;
 <h3>Helping Coffee Shops Build a Strong Online Presence</h3>
 
 <p>
-Website landing page untuk bisnis coffee shop
-yang menampilkan menu, suasana cafe,
-dan informasi lokasi secara menarik
+Website landing page untuk bisnis coffee shop yang menampilkan
+menu, suasana cafe, dan informasi lokasi secara modern
 dan mobile friendly.
 </p>
 
-</section>
+<div class="hero-buttons">
 
+<a href="#result">View Result</a>
+
+<a href="https://wa.me/6281338693093">Contact Me</a>
+
+</div>
+
+</section>
 
 
 <!-- PROJECT OVERVIEW -->
@@ -228,19 +190,59 @@ dan mobile friendly.
 </div>
 
 <div class="card">
-<h3>Goal</h3>
-<p>Membuat website cafe modern yang mudah diakses dari perangkat mobile.</p>
+<h3>Industry</h3>
+<p>Cafe & Coffee Shop</p>
 </div>
 
 <div class="card">
-<h3>Target</h3>
-<p>Meningkatkan daya tarik visual dan membantu bisnis cafe tampil lebih profesional.</p>
+<h3>Goal</h3>
+<p>Membuat website cafe modern yang menarik dan mobile friendly.</p>
 </div>
 
 </div>
 
 </div>
 
+
+<!-- PROBLEM -->
+
+<div class="container section">
+
+<h2>Problem</h2>
+
+<p>
+Banyak bisnis cafe kecil belum memiliki website yang menarik.
+Informasi menu dan lokasi sering hanya tersedia di media sosial
+sehingga pelanggan sulit menemukan informasi dengan cepat.
+</p>
+
+<p>
+Selain itu, tampilan website yang kurang modern dapat
+mengurangi kepercayaan pelanggan terhadap brand bisnis.
+</p>
+
+</div>
+
+
+<!-- SOLUTION -->
+
+<div class="container section">
+
+<h2>Solution</h2>
+
+<p>
+Solusi yang dibuat adalah landing page cafe modern
+dengan visual yang kuat, layout sederhana,
+dan desain yang mobile friendly.
+</p>
+
+<p>
+Website ini menampilkan gambar berkualitas tinggi,
+informasi menu, dan identitas visual cafe
+untuk meningkatkan pengalaman pengguna.
+</p>
+
+</div>
 
 
 <!-- BEFORE AFTER -->
@@ -248,11 +250,6 @@ dan mobile friendly.
 <div class="container section">
 
 <h2>Before vs After</h2>
-
-<p>
-Perbandingan tampilan website sebelum dan sesudah redesign
-untuk meningkatkan branding visual dan pengalaman pengguna.
-</p>
 
 <div class="compare">
 
@@ -262,11 +259,6 @@ untuk meningkatkan branding visual dan pengalaman pengguna.
 
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
 
-<p>
-Website lama terlihat sederhana dan kurang
-menampilkan identitas visual bisnis.
-</p>
-
 </div>
 
 <div>
@@ -275,12 +267,6 @@ menampilkan identitas visual bisnis.
 
 <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
 
-<p>
-Desain baru menggunakan layout modern,
-gambar berkualitas tinggi,
-dan tipografi yang lebih jelas.
-</p>
-
 </div>
 
 </div>
@@ -288,31 +274,28 @@ dan tipografi yang lebih jelas.
 </div>
 
 
+<!-- RESULT -->
 
-<!-- DESIGN PROCESS -->
+<div id="result" class="container section">
 
-<div class="container section">
+<h2>Project Result</h2>
 
-<h2>Design Process</h2>
+<ul>
 
-<p>
-Proses redesign dimulai dengan memahami kebutuhan bisnis cafe.
-Website harus mampu menampilkan menu, suasana tempat,
-dan informasi lokasi dengan cepat dan jelas.
-</p>
+<li>Modern responsive landing page</li>
 
-<p>
-Pendekatan desain menggunakan layout minimal,
-gambar besar, dan tipografi modern
-agar website terlihat profesional
-dan mudah digunakan.
-</p>
+<li>Improved visual branding</li>
+
+<li>Mobile friendly layout</li>
+
+<li>Stronger user experience</li>
+
+</ul>
 
 </div>
 
 
-
-<!-- FINAL RESULT -->
+<!-- FINAL IMAGE -->
 
 <div class="container section">
 
@@ -320,36 +303,7 @@ dan mudah digunakan.
 
 <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
 
-<p>
-Hasil akhirnya adalah landing page cafe
-yang modern dan responsif
-untuk membantu bisnis kecil memiliki
-website yang terlihat profesional.
-</p>
-
 </div>
-
-
-
-<!-- TESTIMONIAL -->
-
-<div class="container section">
-
-<h2>Client Feedback</h2>
-
-<div class="testimonial">
-
-<p>
-"Website redesign ini membuat cafe kami terlihat jauh lebih modern.
-Pelanggan sekarang lebih mudah melihat menu dan lokasi kami."
-</p>
-
-<strong>— Cafe Owner</strong>
-
-</div>
-
-</div>
-
 
 
 <!-- CTA -->
@@ -359,18 +313,17 @@ Pelanggan sekarang lebih mudah melihat menu dan lokasi kami."
 <h2>Need a Website Like This?</h2>
 
 <p>
-Saya membantu bisnis kecil dan UMKM
-membuat website modern
-untuk meningkatkan branding
-dan kepercayaan pelanggan.
+Saya membantu bisnis kecil dan UMKM membuat website modern
+untuk meningkatkan branding dan kepercayaan pelanggan.
 </p>
 
-<a href="https://wa.me/6281338693093">
-Hire Me via WhatsApp
-</a>
+<a href="https://wa.me/6281338693093">Hire Me via WhatsApp</a>
+
+<br><br>
+
+<a href="https://riusdev.github.io/" style="background:#444;">Back to Portfolio</a>
 
 </section>
-
 
 
 </body>
