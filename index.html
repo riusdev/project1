@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,51 +17,76 @@ color:#333;
 line-height:1.6;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
-
-h1,h2,h3{
-margin-bottom:15px;
-}
+/* HERO */
 
 .hero{
-background:#111;
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb");
+
+background-size:cover;
+background-position:center;
+
 color:white;
-padding:100px 20px;
+padding:140px 20px;
 text-align:center;
 }
 
 .hero h1{
-font-size:42px;
+font-size:46px;
+margin-bottom:10px;
+animation:fadeUp 1s ease;
 }
 
 .hero p{
-opacity:0.8;
+max-width:600px;
+margin:auto;
+opacity:0.9;
+animation:fadeUp 1.4s ease;
 }
 
-.project-info{
+/* CONTAINER */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 20px;
+}
+
+/* GRID */
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 margin-top:30px;
 }
 
+/* CARD */
+
 .card{
 background:white;
-padding:20px;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
+padding:25px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.06);
+transition:0.3s;
 }
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* IMAGES */
 
 img{
 width:100%;
-border-radius:8px;
+border-radius:10px;
 }
 
-.before-after{
+/* BEFORE AFTER */
+
+.compare{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:30px;
@@ -71,32 +97,79 @@ margin-top:30px;
 margin-top:70px;
 }
 
+/* TESTIMONIAL */
+
+.testimonial{
+background:#fff;
+padding:30px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.06);
+margin-top:30px;
+}
+
+.testimonial p{
+font-style:italic;
+}
+
+/* CTA */
+
 .cta{
 background:#111;
 color:white;
 text-align:center;
 padding:80px 20px;
-margin-top:80px;
+margin-top:90px;
 }
 
 .cta a{
 display:inline-block;
-margin-top:20px;
-padding:14px 28px;
+margin-top:25px;
+padding:14px 30px;
 background:#ff6b35;
 color:white;
 text-decoration:none;
 border-radius:6px;
 font-weight:bold;
+transition:0.3s;
 }
 
 .cta a:hover{
 opacity:0.85;
 }
 
-</style>
-</head>
+/* ANIMATION */
 
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.compare{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+}
+
+</style>
+
+</head>
 
 <body>
 
@@ -108,20 +181,22 @@ opacity:0.85;
 <h1>Cafe Landing Page Design</h1>
 
 <p>
-Website landing page untuk bisnis coffee shop modern yang menampilkan menu, suasana cafe,
-dan informasi lokasi secara sederhana namun menarik.
+Website landing page untuk bisnis coffee shop modern
+yang menampilkan menu, suasana cafe, dan informasi lokasi
+secara sederhana namun menarik.
 </p>
 
 </section>
 
 
-<!-- PROJECT INFO -->
+
+<!-- PROJECT OVERVIEW -->
 
 <div class="container">
 
 <h2>Project Overview</h2>
 
-<div class="project-info">
+<div class="grid">
 
 <div class="card">
 <h3>Role</h3>
@@ -135,17 +210,18 @@ dan informasi lokasi secara sederhana namun menarik.
 
 <div class="card">
 <h3>Goal</h3>
-<p>Membuat website cafe yang modern dan mudah diakses dari mobile.</p>
+<p>Membuat website cafe modern yang mudah diakses dari perangkat mobile.</p>
 </div>
 
 <div class="card">
 <h3>Target</h3>
-<p>Menarik pengunjung baru melalui tampilan visual yang kuat.</p>
+<p>Meningkatkan daya tarik visual dan membantu bisnis cafe tampil lebih profesional.</p>
 </div>
 
 </div>
 
 </div>
+
 
 
 <!-- BEFORE AFTER -->
@@ -155,12 +231,12 @@ dan informasi lokasi secara sederhana namun menarik.
 <h2>Before vs After</h2>
 
 <p>
-Berikut contoh perbandingan tampilan website cafe sebelum redesign dan setelah redesign.
-Tujuannya adalah meningkatkan visual branding dan pengalaman pengguna.
+Perbandingan tampilan website sebelum dan sesudah redesign.
+Pendekatan ini bertujuan meningkatkan visual branding
+dan pengalaman pengguna.
 </p>
 
-
-<div class="before-after">
+<div class="compare">
 
 <div>
 
@@ -169,12 +245,11 @@ Tujuannya adalah meningkatkan visual branding dan pengalaman pengguna.
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
 
 <p>
-Website lama terlihat kurang menarik, layout tidak rapi dan kurang
-menampilkan identitas visual cafe.
+Website lama terlihat sederhana dan kurang menampilkan
+identitas visual bisnis.
 </p>
 
 </div>
-
 
 <div>
 
@@ -183,8 +258,9 @@ menampilkan identitas visual cafe.
 <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
 
 <p>
-Desain baru menggunakan layout modern, tipografi yang lebih jelas
-dan gambar berkualitas tinggi untuk meningkatkan daya tarik.
+Desain baru menggunakan layout modern,
+gambar berkualitas tinggi,
+dan tipografi yang lebih jelas.
 </p>
 
 </div>
@@ -192,6 +268,7 @@ dan gambar berkualitas tinggi untuk meningkatkan daya tarik.
 </div>
 
 </div>
+
 
 
 <!-- DESIGN PROCESS -->
@@ -207,12 +284,14 @@ dan informasi lokasi dengan cepat dan jelas.
 </p>
 
 <p>
-Pendekatan desain yang digunakan adalah minimal layout,
-penggunaan gambar besar, dan tipografi modern agar
-website terasa lebih profesional dan mudah digunakan.
+Pendekatan desain menggunakan layout minimal,
+gambar besar, dan tipografi modern
+agar website terlihat profesional
+dan mudah digunakan.
 </p>
 
 </div>
+
 
 
 <!-- FINAL RESULT -->
@@ -224,12 +303,36 @@ website terasa lebih profesional dan mudah digunakan.
 <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
 
 <p>
-Hasil akhir adalah landing page cafe yang sederhana namun elegan.
-Desain ini difokuskan untuk memberikan kesan modern dan
-membantu bisnis kecil memiliki website yang terlihat profesional.
+Hasil akhirnya adalah landing page cafe
+yang modern dan responsif.
+Desain ini membantu bisnis kecil memiliki
+website yang terlihat lebih profesional
+dan menarik bagi pelanggan.
 </p>
 
 </div>
+
+
+
+<!-- TESTIMONIAL -->
+
+<div class="container section">
+
+<h2>Client Feedback</h2>
+
+<div class="testimonial">
+
+<p>
+"Website redesign ini membuat cafe kami terlihat jauh lebih modern.
+Pelanggan sekarang lebih mudah melihat menu dan lokasi kami."
+</p>
+
+<strong>— Cafe Owner</strong>
+
+</div>
+
+</div>
+
 
 
 <!-- CTA -->
@@ -239,13 +342,15 @@ membantu bisnis kecil memiliki website yang terlihat profesional.
 <h2>Need a Website Like This?</h2>
 
 <p>
-Saya membantu bisnis kecil dan UMKM membuat website modern
-untuk meningkatkan branding dan kepercayaan pelanggan.
+Saya membantu bisnis kecil dan UMKM
+membuat website modern untuk meningkatkan
+branding dan kepercayaan pelanggan.
 </p>
 
-<a href="https://riusdev.github.io/">View My Portfolio</a>
+<a href="https://wa.me/">Hire Me via WhatsApp</a>
 
 </section>
+
 
 
 </body>
